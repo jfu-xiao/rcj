@@ -13,10 +13,10 @@ fail fast
 
 ## Setup
 
-Capybara-Jenkins requires Ruby 1.9.3 or later. To install, type:
+rcj requires Ruby 1.9.3 or later. To install, type:
 
 ```bash
-gem install capybara-jenkins
+gem install rcj
 ```
 
 

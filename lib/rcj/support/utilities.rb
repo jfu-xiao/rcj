@@ -1,7 +1,13 @@
+require 'capybara'
+
 def save_snapshot(example,filename)
     save_html_to_file(example, filename)
 
     if example.metadata[:js]
+      puts 1
+      puts filename
+      puts Capybara.current_session.driver.class
+      puts Capybara.current_session.driver.respond_to? :save_screenshot
       save_screenshot_to_file(example, filename)
     end
 end

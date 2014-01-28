@@ -2,6 +2,9 @@ require_relative 'utilities'
 
 puts "loading support/web_testing.rb"
 
+require 'capybara'
+require 'rspec/rails'
+
 RSpec.configure do |config|
   config.include Capybara::RSpecMatchers
   config.include Capybara::DSL
@@ -17,6 +20,7 @@ RSpec.configure do |config|
   FileUtils.rm_rf($base_screenshot_dir)
 
   config.before(:each) do
+    # don't test model
     if example.metadata[:type] != :model
       example.metadata[:id] = @example_number
       FileUtils.mkdir_p(path_to_tmp(example)) unless File.exists?(path_to_tmp(example))
@@ -24,6 +28,7 @@ RSpec.configure do |config|
   end
 
   config.after(:each) do
+    # don't test model
     if example.metadata[:type] != :model
       result_name = example.exception ? "failure" : "final"
 
