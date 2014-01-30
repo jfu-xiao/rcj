@@ -1,6 +1,6 @@
 puts "loading support/remote.rb"
 
-# require File.expand_path("../../config/environment", __FILE__)
+require_relative 'all_inc.rb'
 require_relative 'support/config'
 require 'selenium-webdriver'
 require 'rspec/rails'

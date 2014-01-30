@@ -1,6 +1,8 @@
-require File.expand_path("../../config/environment", __FILE__)
+require_relative 'all_inc.rb'
+
 require 'rspec/rails'
 require 'capybara/rails'
+
 require_relative 'support/config'
 
 puts "loading fail_fast.rb"
